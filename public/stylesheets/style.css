@@ -1,0 +1,23 @@
+body {
+    background-color: #EFEFEF;
+};
+.navbar-nav .nav-link {
+    background-color: rgb(226, 42, 42) !important;
+    font-size: 20px !important;
+};
+
+.navbar {
+    background-color: #1f4e2a !important;
+}
+
+;
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+
+.form-container {
+    background-color: #1f4e2a !important;
+    padding: 10px;
+};
+

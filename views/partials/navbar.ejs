@@ -1,0 +1,26 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <div class="container">
+        <a class="navbar-brand" style="background-color: rgb(2, 131, 131);font-size: 2rem;border-radius:4px;" href="#">YelpCamp<i style="padding:4px; color:orange;" class="fas fa-campground"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/campgrounds">Campgrounds</a>
+                <a class="nav-link" href="/campgrounds/new">New Campground</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <% if(!currentUser) {%>
+                <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a class="nav-link" href="/register"><i class="fas fa-user-plus"></i> Register</a>
+                <% } else {%>
+               <span> <a class="nav-link">Hi,<%= currentUser.username.toUpperCase()%></a></span>
+                <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>
