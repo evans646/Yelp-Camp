@@ -1174,3 +1174,37 @@ and we can make a new file .gitignore in the top level of the application sand p
 now in the terminal, you can type : git remote -v
 
 the first command we issue is: git add \\ to add the files 
+and then : git commit -m "ready to try deploying"
+
+after we can do : git push heroku master 
+
+which will take sometime to complete and once that is done you can visit the heroku url again and you should see something like : Application error
+An error occurred in the application and your page could not be served. If you are the application owner, check your logs for details. You can do this from the Heroku CLI with the command
+heroku logs --tail
+
+TO FIX this error :
+
+by running: heroku logs --tail
+
+we hve been running the app with nodemon so we are missing a script:
+so in the json file, there is a script section, we can add in something else:
+{
+  "name": "yelpcamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js" \\here
+  },
+
+  and now you can run npm start to see if it works 
+
+  and then we can change the port, we have been using 3000 but we can use the process.env that wil be present on heroku 
+
+  now we can run git commit -m "Aadd start script"
+   git commit -m "add start script"
+
+   and run git push heroku master
+
+   but it;s not going to make the app ready right away, we have another error 
