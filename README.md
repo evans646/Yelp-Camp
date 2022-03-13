@@ -7,11 +7,13 @@ This project was created using Node.js, Express, MongoDB, and Bootstrap. Passpor
 
 <hr>
 
+<p>
 <ul>
     <li>Users can create, edit, and remove campgrounds</li>
     <li>Users can review campgrounds and remove their review as well as leave and delete comments</li>
     <li>Only authenticated users are permitted to review campgrounds and leave comments </li>
 </ul>
+</p>
 
 <h5>View the live  version here <h5/>
 https://morning-oasis-67101.herokuapp.com/
