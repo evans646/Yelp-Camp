@@ -1,7 +1,6 @@
 if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 };
-
 //console.log(process.env.SECRET)
 const express = require('express');
 const path = require('path');
@@ -23,8 +22,7 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 const userRoutes = require('./routes/users');
 
- //const dbUrl = process.env.DB_URL
- const dbUrl = process.env.DB_URL|| 'mongodb://localhost:27017/yelpCamp'
+ const dbUrl = process.env.DB_URL||'mongodb://localhost:27017/yelpCamp';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
@@ -34,8 +32,10 @@ mongoose.connect(dbUrl, {
 });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "CONNECTION ERROR:"));
+
 db.once("open", () => {console.log("DATABASE CONNECTED")});
 const app = express();
+
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -44,11 +44,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(mongoSanitize());
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(mongoSanitize({
     replaceWith: '_'
-}))
+}));
 
-const secret = process.env.SECRET || 'Mylastonewhichshouldwork'
+const secret = process.env.SECRET || 'Mylastonewhichshouldwork';
+
 const store = new MongoStore({
     url: dbUrl,
     secret,
@@ -59,7 +61,6 @@ store.on("error", function (e) {
     console.log("SESSION STORE ERROR", e)
 });
 
-
 const sessionConfig = {
     store,
     secret,
@@ -69,10 +70,10 @@ const sessionConfig = {
     cookie: {
         httpOnly: true,
         // secure: true,
-        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
-        maxAge: 1000 * 60 * 60 * 24 * 7
+        expires : Date.now() + 1000 * 60 * 60 * 24 * 7,
+        maxAge : 1000 * 60 * 60 * 24 * 7
     }
-}
+};
 
 app.use(session(sessionConfig));
 app.use(flash());
@@ -104,7 +105,7 @@ const fontSrcUrls = [ "https://use.fontawesome.com/"];
 app.use(
     helmet.contentSecurityPolicy({
         directives: {
-            defaultSrc: [],
+            defaultSrc: [1],
             connectSrc: ["'self'", ...connectSrcUrls],
             scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
             styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
@@ -126,6 +127,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 
+
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
@@ -138,15 +140,16 @@ app.use((req, res, next) => {
 
 
 app.use('/', userRoutes);
-app.use('/campgrounds', campgroundRoutes)
-app.use('/campgrounds/:id/reviews', reviewRoutes)
+app.use('/campgrounds', campgroundRoutes);
+app.use('/campgrounds/:id/reviews', reviewRoutes);
 
 
 app.get('/', (req, res) => {
-    res.render('home')
+    res.render('home');
 });
+
 app.all('*', (req, res, next) => {
-    next(new ExpressError('Page Not Found', 404))
+    next(new ExpressError('Page Not Found', 404));
 });
 
 app.use((err, req, res, next) => {

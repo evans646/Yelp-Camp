@@ -57,4 +57,5 @@ CampgroundSchema.post('findOneAndDelete', async function (doc) {//doc is what we
         });
     };console.log("DELETED REVIEWS")//whenever a campground is deleted
 });
+
 module.exports = mongoose.model('Campground', CampgroundSchema);
