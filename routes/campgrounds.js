@@ -7,11 +7,12 @@ const { storage } = require('../cloudinary');
 const multer = require('multer');
 const upload = multer({ storage });
 const max = 3;
+
 //const Campground = require('../models/campground');
 router.route('/')
     .get(catchAsync(campgrounds.index))
      .post(isLoggedIn, upload.array('image',max),validateCampground,catchAsync(campgrounds.createCampground));
-    // .post(upload.array('image',3), (req, res) => {
+    //.post(upload.array('image',3), (req, res) => {
     //     console.log(req.files);
     //     res.send('done')
     // });
