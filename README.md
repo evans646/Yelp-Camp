@@ -5,8 +5,6 @@ This project was created using Node.js, Express, MongoDB, and Bootstrap. Passpor
 
 <h1>FEATURES<h1/>
 
-<hr>
-
 <p>
 <ul>
     <li>Users can create, edit, and remove campgrounds</li>
@@ -15,6 +13,9 @@ This project was created using Node.js, Express, MongoDB, and Bootstrap. Passpor
 </ul>
 </p>
 
-<h5>View the live  version here <h5/>
+
+
+<p>View the live  version here <p/>
+    
 https://morning-oasis-67101.herokuapp.com/
 
