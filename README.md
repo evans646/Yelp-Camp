@@ -4,15 +4,16 @@ YelpCamp is a website where users can create and review campgrounds. In order to
 This project was created using Node.js, Express, MongoDB, and Bootstrap. Passport.js was used to handle authentication.
 
 <h3>FEATURES OF YELPCAMP<h1/>
-<hr>
+<hr/>
+<span>
 <ul>
     <li>Users can create, edit, and remove campgrounds</li>
     <li>Users can review campgrounds and delete their review as well</li>
     <li>Only authenticated users are permitted to review campgrounds and leave comments</li>
     <li>Only users who created campground/review can delete or edit</li>
 </ul>
+</span>
 
-
-<p>View the live  version <a href="morning-oasis-67101.herokuapp.com">here</a><p/>
+<p>View the live site <a href="morning-oasis-67101.herokuapp.com">here</a><p/>
     
 
