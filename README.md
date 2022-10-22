@@ -1,20 +1,18 @@
-# Yelp-Camp
-YelpCamp is a website where users can create and review campgrounds. In order to review or create a campground, you must have an account. This project was part of Colt Steele's web dev course on udemy.
+YelpCamp is a website where users can create and review campgrounds. In order to review or create a campground, you must have an account.
+ This project was part of Colt Steele's web dev bootcamp course on udemy.
 
 This project was created using Node.js, Express, MongoDB, and Bootstrap. Passport.js was used to handle authentication.
 
-<h1>FEATURES<h1/>
-
-<p>
+<h3>FEATURES OF YELPCAMP<h1/>
+<hr>
 <ul>
     <li>Users can create, edit, and remove campgrounds</li>
-    <li>Users can review campgrounds and remove their review as well as leave and delete comments</li>
-    <li>Only authenticated users are permitted to review campgrounds and leave comments </li>
+    <li>Users can review campgrounds and delete their review as well</li>
+    <li>Only authenticated users are permitted to review campgrounds and leave comments</li>
+    <li>Only users who created campground/review can delete or edit</li>
 </ul>
-</p>
 
 
-<p>View the live  version here <p/>
+<p>View the live  version <a href="morning-oasis-67101.herokuapp.com">here</a><p/>
     
-
 
