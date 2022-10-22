@@ -14,6 +14,6 @@ This project was created using Node.js, Express, MongoDB, and Bootstrap. Passpor
 </ul>
 </span>
 
-<p>View the live site <a href="morning-oasis-67101.herokuapp.com">here</a><p/>
+<p>View the live site <a href="https://morning-oasis-67101.herokuapp.com" target="_blank">here</a><p/>
     
 
