@@ -10,6 +10,6 @@ const UserSchema = new Schema({
     }
 });
 
-UserSchema.plugin(passportLocalMongoose);//this information will be added on to the schema oce we plugged in
+UserSchema.plugin(passportLocalMongoose);//this information will be added on to the schema once we plugged in
 
 module.exports = mongoose.model('User', UserSchema);
